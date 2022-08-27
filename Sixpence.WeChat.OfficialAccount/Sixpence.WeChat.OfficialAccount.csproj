@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sixpence.WeChat.Common\Sixpence.WeChat.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Config\" />
+    <None Remove="FocusUser\" />
+    <None Remove="Material\" />
+    <None Remove="Message\" />
+    <None Remove="WeChatMenu\" />
+    <None Remove="WeChatNews\" />
+    <None Remove="WeChatNewsMaterial\" />
+    <None Remove="WeChatReply\" />
+    <None Remove="Job\" />
+    <None Remove="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="FocusUser\" />
+    <Folder Include="Material\" />
+    <Folder Include="Message\" />
+    <Folder Include="WeChatMenu\" />
+    <Folder Include="WeChatNews\" />
+    <Folder Include="WeChatNewsMaterial\" />
+    <Folder Include="WeChatReply\" />
+    <Folder Include="Job\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
+</Project>

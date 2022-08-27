@@ -1,0 +1,10 @@
+﻿{
+  "Url": "https://api.weixin.qq.com/",
+  "Login": "https://api.weixin.qq.com/sns/jscode2session?appid={0}&secret={1}&js_code={2}&grant_type=authorization_code",
+  "GetOpenId": "https://api.weixin.qq.com/wxa/getpluginopenpid?access_token={0}",
+  "GetAccessTokenApi": "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={0}&secret={1}",
+  "CheckEncryptedData": "https://api.weixin.qq.com/wxa/business/checkencryptedmsg?access_token={0}",
+  "GetUserEncryptKey": "https://api.weixin.qq.com/wxa/business/getuserencryptkey?access_token={0}",
+  "GetPhoneNumber": "https://api.weixin.qq.com/wxa/business/getuserphonenumber?access_token={0}",
+}
+

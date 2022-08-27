@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Sixpence.MiniProgram</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Config\" />
+    <None Remove="Sixpence.ORM" />
+    <None Remove="Sixpence.Common" />
+    <None Remove="Auth\" />
+    <None Remove="Model\" />
+    <None Remove="User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Auth\" />
+    <Folder Include="Model\" />
+    <Folder Include="User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sixpence.WeChat.Common\Sixpence.WeChat.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Sixpence.ORM" Version="2.2.0" />
+    <PackageReference Include="Sixpence.Common" Version="1.3.0" />
+  </ItemGroup>
+</Project>
