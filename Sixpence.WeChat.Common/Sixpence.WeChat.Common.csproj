@@ -52,6 +52,6 @@
     <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Sixpence.Web" Version="1.1.0" />
+    <PackageReference Include="Sixpence.Web" Version="1.2.0" />
   </ItemGroup>
 </Project>
