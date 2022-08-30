@@ -1,13 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Sixpence.Web;
 using Sixpence.Web.Auth;
-using Sixpence.Web.Extensions;
 using Sixpence.Web.Module.DataService;
 using Sixpence.Web.WebApi;
 

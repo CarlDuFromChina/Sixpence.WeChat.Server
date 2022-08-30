@@ -5,19 +5,16 @@ using Sixpence.WeChat.Common.Model;
 
 namespace Sixpence.WeChat.MiniProgram.Model
 {
-    [DataContract]
     public class LoginResponseModel : BaseWxResponse
     {
         /// <summary>
         /// 用户唯一标识
         /// </summary>
-        [DataMember]
         public string openid { get; set; }
 
         /// <summary>
         /// 会话密钥
         /// </summary>
-        [DataMember]
         public string session_key { get; set; }
 
         /// <summary>
@@ -28,8 +25,6 @@ namespace Sixpence.WeChat.MiniProgram.Model
         /// <summary>
         /// token
         /// </summary>
-        [JsonIgnore]
-        [DataMember]
         public string token { get; set; }
     }
 }

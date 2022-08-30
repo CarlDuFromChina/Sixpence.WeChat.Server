@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml.Linq;
 using Sixpence.ORM.EntityManager;
+using Sixpence.Web.Auth;
 using Sixpence.Web.Auth.Role;
 using Sixpence.Web.Auth.UserInfo;
 using Sixpence.Web.Config;
@@ -27,13 +28,19 @@ namespace Sixpence.WeChat.MiniProgram.User
             user_info user = manager.QueryFirst<user_info>(mpUser.id);
             if (user == null)
             {
-                user.id = mpUser.openid;
-                user.code = mpUser.openid;
-                user.password = SystemConfig.Config.DefaultPassword;
-                user.name = mpUser.nickname;
-                user.statecode = true;
-                user.statecode_name = "启用";
-                manager.Create(user, false);
+                user = new user_info()
+                {
+                    id = mpUser.openid,
+                    code = mpUser.openid,
+                    password = SystemConfig.Config.DefaultPassword,
+                    name = mpUser.nickname,
+                    roleid = "444444444-44444-4444-4444-444444444444",
+                    roleid_name = "微信小程序角色",
+                    statecode = true,
+                    statecode_name = "启用"
+                };
+
+                manager.Create(user);
             }
         }
     }

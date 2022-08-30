@@ -11,7 +11,7 @@ namespace Sixpence.WeChat.MiniProgram
     {
         public const string ACESS_TOEKN_NAME = "MiniPorgram_AccessToken";
         private static readonly object lockObject = new Object();
-        public static Dictionary<string, LoginResponseModel> Session { get; set; }
+        public static Dictionary<string, LoginResponseModel> Session = new Dictionary<string, LoginResponseModel>();
 
         /// <summary>
         /// 获取access_token

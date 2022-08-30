@@ -26,13 +26,13 @@ namespace Sixpence.WeChat.MiniProgram.Auth
         /// <param name="code"></param>
         /// <see cref="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html"/>
         /// <returns></returns>
-        public async Task<LoginResponseModel> Login(string code)
+        public LoginResponseModel Login(string code)
         {
             var url = MiniProgramApiConfig.GetValue("Login");
             var appid = MiniProgramConfig.Config.AppId;
             var secret = MiniProgramConfig.Config.AppSecret;
             logger.Debug("微信登录请求地址：" + string.Format(url, appid, secret, code));
-            var resp = await HttpUtil.GetAsync(string.Format(url, appid, secret, code));
+            var resp = HttpUtil.Get(string.Format(url, appid, secret, code));
             logger.Debug("微信登录返回值：" + resp);
             var data = JsonConvert.DeserializeObject<LoginResponseModel>(resp);
             WxAssertUtil.CheckWXResponse(data);
