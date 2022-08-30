@@ -17,6 +17,14 @@
 
   <ItemGroup>
     <None Remove="Sixpence.Web" />
+    <None Remove="version\1.0\2022062001-sys_role.csv" />
+    <None Remove="version\1.0\2022062002-auth_user.csv" />
+    <None Remove="version\1.0\2022062003-user_info.csv" />
+    <None Remove="version\1.0\2022062004-sys_menu.csv" />
+    <None Remove="version\1.0\2022062005-sys_config.csv" />
+    <None Remove="version\1.0\2022062006-sys_param.csv" />
+    <None Remove="version\1.0\2022062007-sys_paramgroup.csv" />
+    <None Remove="version\1.0\2022062008-quartz.sql" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +36,32 @@
     <ProjectReference Include="..\Sixpence.WeChat.OfficialAccount\Sixpence.WeChat.OfficialAccount.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="version\1.0\2022062001-sys_role.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="version\1.0\2022062002-auth_user.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="version\1.0\2022062003-user_info.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="version\1.0\2022062004-sys_menu.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="version\1.0\2022062005-sys_config.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="version\1.0\2022062006-sys_param.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="version\1.0\2022062007-sys_paramgroup.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="version\1.0\2022062008-quartz.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Content Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
