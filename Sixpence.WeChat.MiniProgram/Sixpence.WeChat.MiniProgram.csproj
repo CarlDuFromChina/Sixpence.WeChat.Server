@@ -12,6 +12,7 @@
     <None Remove="Auth\" />
     <None Remove="Model\" />
     <None Remove="User\" />
+    <None Remove="miniprogram.api.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
@@ -25,5 +26,15 @@
   <ItemGroup>
     <PackageReference Include="Sixpence.ORM" Version="2.2.0" />
     <PackageReference Include="Sixpence.Common" Version="1.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="miniprogram.api.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="miniprogram.api.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

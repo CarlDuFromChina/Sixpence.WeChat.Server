@@ -18,6 +18,7 @@
     <None Remove="WeChatReply\" />
     <None Remove="Job\" />
     <None Remove="Model\" />
+    <None Remove="officialaccount.api.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
@@ -30,5 +31,15 @@
     <Folder Include="WeChatReply\" />
     <Folder Include="Job\" />
     <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="officialaccount.api.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="officialaccount.api.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
