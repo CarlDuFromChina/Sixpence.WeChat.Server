@@ -18,4 +18,5 @@
   "GetIndustry": "https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token={0}",
   "GetTemplate": "https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token={0}",
   "DeletetTemplate": "https://api.weixin.qq.com/cgi-bin/template/del_private_template?access_token={0}",
+  "SendTemplateMessage": "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={0}",
 }

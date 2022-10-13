@@ -37,7 +37,7 @@ namespace Sixpence.WeChat.MiniProgram
                 {
                     result = true,
                     userName = code,
-                    token = JwtHelper.CreateToken(new JwtTokenModel() { Code = auth.code, Name = auth.name, Role = auth.roleid, Uid = auth.id }),
+                    token = JwtHelper.CreateToken(new JwtTokenModel() { Code = auth.code, Name = $"微信用户{openid}", Role = auth.roleid, Uid = auth.id }),
                     userId = wechatUser.openid,
                     message = "登录成功"
                 };

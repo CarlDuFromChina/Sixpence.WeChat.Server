@@ -286,6 +286,26 @@ namespace Sixpence.WeChat.OfficialAccount
             var resp = HttpUtil.Post(url, JsonConvert.SerializeObject(postData));
             CheckWeChatErrorResponse(JObject.Parse(resp), "删除模板失败");
         }
+
+        public static void SendTemplateMessage(string openid, string templateid, string data, string url = "", string appid = "", string pagepath = "")
+        {
+            var _url = string.Format(OfficialAccountApiConfig.GetValue("SendTemplateMessage"), OfficialAccountService.AccessToken);
+            var postData = new
+            {
+                touser = openid,
+                template_id = templateid,
+                url,
+                miniprogram = new
+                {
+                    appid,
+                    pagepath
+                },
+                client_msg_id = openid + Guid.NewGuid().ToString(),
+                data
+            };
+            var resp = HttpUtil.Post(_url, JsonConvert.SerializeObject(postData));
+            CheckWeChatErrorResponse(JObject.Parse(resp), "删除模板失败");
+        }
         #endregion
     }
 }
