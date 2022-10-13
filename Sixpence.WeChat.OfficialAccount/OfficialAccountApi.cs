@@ -229,17 +229,12 @@ namespace Sixpence.WeChat.OfficialAccount
 
         #region 菜单
         /// <summary>
-        /// 创建菜单 Api
-        /// </summary>
-        public static readonly string CreateMenuApi = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token={0}";
-
-        /// <summary>
         /// 创建菜单
         /// </summary>
         /// <returns></returns>
         public static string CreateMenu(string postData)
         {
-            var resp = HttpUtil.Post(string.Format(CreateMenuApi, OfficialAccountService.AccessToken), postData);
+            var resp = HttpUtil.Post(string.Format(OfficialAccountApiConfig.GetValue("CreateMenuApi"), OfficialAccountService.AccessToken), postData);
             CheckWeChatErrorResponse(JObject.Parse(resp), "创建菜单失败");
             return resp;
         }
@@ -263,6 +258,33 @@ namespace Sixpence.WeChat.OfficialAccount
         {
             var resp = HttpUtil.Get(string.Format(OfficialAccountApiConfig.GetValue("DeleteMenuApi"), OfficialAccountService.AccessToken));
             CheckWeChatErrorResponse(JObject.Parse(resp), "删除微信菜单失败");
+        }
+        #endregion
+
+        #region 模板
+        public static WeChatIndustryResponse GetIndustry()
+        {
+            var resp = HttpUtil.Get(string.Format(OfficialAccountApiConfig.GetValue("GetIndustry"), OfficialAccountService.AccessToken));
+            CheckWeChatErrorResponse(JObject.Parse(resp), "获取行业信息失败");
+            return JsonConvert.DeserializeObject<WeChatIndustryResponse>(resp);
+        }
+
+        public static WeChatTemplateResponse GetTemplate()
+        {
+            var resp = HttpUtil.Get(string.Format(OfficialAccountApiConfig.GetValue("GetTemplate"), OfficialAccountService.AccessToken));
+            CheckWeChatErrorResponse(JObject.Parse(resp), "获取模板失败");
+            return JsonConvert.DeserializeObject<WeChatTemplateResponse>(resp);
+        }
+
+        public static void DeleteTemplate(string templateId)
+        {
+            var url = string.Format(OfficialAccountApiConfig.GetValue("DeletetTemplate"), OfficialAccountService.AccessToken);
+            var postData = new
+            {
+                template_id = templateId
+            };
+            var resp = HttpUtil.Post(url, JsonConvert.SerializeObject(postData));
+            CheckWeChatErrorResponse(JObject.Parse(resp), "删除模板失败");
         }
         #endregion
     }

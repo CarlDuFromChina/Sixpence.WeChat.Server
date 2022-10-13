@@ -15,4 +15,7 @@
   "GetMenuApi": "https://api.weixin.qq.com/cgi-bin/get_current_selfmenu_info?access_token={0}",
   "DeleteMenuApi": "https://api.weixin.qq.com/cgi-bin/menu/delete?access_token={0}",
   "UploadImage": "https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token={0}",
+  "GetIndustry": "https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token={0}",
+  "GetTemplate": "https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token={0}",
+  "DeletetTemplate": "https://api.weixin.qq.com/cgi-bin/template/del_private_template?access_token={0}",
 }
