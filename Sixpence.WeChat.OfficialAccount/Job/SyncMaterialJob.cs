@@ -11,8 +11,10 @@ using Quartz;
 using Sixpence.ORM.EntityManager;
 using Sixpence.Web.Entity;
 using Sixpence.Web.Job;
-using Sixpence.WeChat.OfficialAccount.Material;
+using Sixpence.WeChat.OfficialAccount.Entity;
+using Sixpence.WeChat.OfficialAccount.Extension;
 using Sixpence.WeChat.OfficialAccount.Model;
+using Sixpence.WeChat.OfficialAccount.Service;
 using System;
 
 namespace Sixpence.WeChat.OfficialAccount.Job

@@ -22,10 +22,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
-    <Folder Include="Message\" />
-    <Folder Include="WeChatMenu\" />
+    <Folder Include="Model\Message\" />
     <Folder Include="Job\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="officialaccount.api.json">

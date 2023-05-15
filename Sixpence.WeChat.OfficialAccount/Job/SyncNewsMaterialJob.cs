@@ -9,12 +9,12 @@ Description：同步微信图文素材Job
 
 using Sixpence.Web.Auth;
 using Sixpence.Web.Job;
-using Sixpence.WeChat.OfficialAccount.WeChatNews;
-using Sixpence.WeChat.OfficialAccount.WeChatNewsMaterial;
 using Quartz;
 using Sixpence.ORM.EntityManager;
 using System;
 using System.Linq;
+using Sixpence.WeChat.OfficialAccount.Service;
+using Sixpence.WeChat.OfficialAccount.Entity;
 
 namespace Sixpence.WeChat.OfficialAccount.Job
 {

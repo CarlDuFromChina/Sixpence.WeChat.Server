@@ -2,7 +2,7 @@
 using Quartz;
 using Sixpence.ORM.EntityManager;
 using Sixpence.Web.Job;
-using Sixpence.WeChat.OfficialAccount.FocusUser;
+using Sixpence.WeChat.OfficialAccount.Service;
 
 namespace Sixpence.WeChat.OfficialAccount.Job
 {

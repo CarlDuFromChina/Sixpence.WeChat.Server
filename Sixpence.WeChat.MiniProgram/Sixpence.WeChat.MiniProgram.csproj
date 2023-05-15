@@ -16,7 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
-    <Folder Include="Auth\" />
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
