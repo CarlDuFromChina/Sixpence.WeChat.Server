@@ -1,6 +1,5 @@
 ﻿using Sixpence.Web.Config;
 using Sixpence.Web.Store;
-using Sixpence.Web.Store.SysFile;
 using Sixpence.Common;
 using Sixpence.Common.IoC;
 using Sixpence.Common.Utils;
@@ -10,10 +9,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Sixpence.Web.Service;
+using Sixpence.Web.Entity;
 
 namespace Sixpence.WeChat.OfficialAccount.WeChatNewsMaterial
 {
-    public class WeChatNewsMaterialService : EntityService<wechat_news_material>
+    public class WeChatNewsMaterialService : EntityService<WechatNewsMaterial>
     {
         #region 构造函数
         public WeChatNewsMaterialService() : base() { }
@@ -28,12 +29,12 @@ namespace Sixpence.WeChat.OfficialAccount.WeChatNewsMaterial
         /// <returns></returns>
         public string CreateData(string fileid)
         {
-            var file = Manager.QueryFirst<sys_file>(fileid);
-            var data = Manager.QueryFirst<wechat_news_material>("SELECT * FROM wechat_news_material WHERE fileid = @id", new Dictionary<string, object>() { { "@id", fileid } });
+            var file = Manager.QueryFirst<SysFile>(fileid);
+            var data = Manager.QueryFirst<WechatNewsMaterial>("SELECT * FROM wechat_news_material WHERE fileid = @id", new Dictionary<string, object>() { { "@id", fileid } });
             if (data == null)
             {
                 var stream = ServiceContainer.Resolve<IStoreStrategy>(StoreConfig.Config.Type).GetStream(fileid);
-                data = new wechat_news_material()
+                data = new WechatNewsMaterial()
                 {
                     id = Guid.NewGuid().ToString(),
                     fileid = fileid
@@ -97,7 +98,7 @@ namespace Sixpence.WeChat.OfficialAccount.WeChatNewsMaterial
                 {
                     var identity = item.Split("/")[4];
                     var sql = "SELECT * FROM wechat_news_material WHERE media_url like concat('%', @url, '%')";
-                    var data = Manager.QueryFirst<wechat_news_material>(sql, new Dictionary<string, object>() { { "@url", identity } });
+                    var data = Manager.QueryFirst<WechatNewsMaterial>(sql, new Dictionary<string, object>() { { "@url", identity } });
                     if (data != null)
                     {
                         dic.TryAdd(item, data.local_url);

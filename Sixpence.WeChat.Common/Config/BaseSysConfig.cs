@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using Sixpence.Common.Utils;
 using Sixpence.ORM.Entity;
 using Sixpence.ORM.EntityManager;
-using Sixpence.Web.Module.SysConfig;
+using Sixpence.Web.Entity;
 
 namespace Sixpence.WeChat
 {
@@ -18,7 +18,7 @@ namespace Sixpence.WeChat
             {
                 code = EntityCommon.UpperChartToLowerUnderLine(typeof(T).Name.Replace("Config", ""))
             };
-            var result = em.DbClient.QueryFirst<sys_config>(sql, param);
+            var result = em.DbClient.QueryFirst<SysConfig>(sql, param);
             AssertUtil.IsNull(result, $"未找到[{typeof(T).Name}]配置节点");
             Config = JsonConvert.DeserializeObject<T>(result.value);
         }

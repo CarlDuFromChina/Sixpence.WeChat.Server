@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>Sixpence.MiniProgram</AssemblyName>
   </PropertyGroup>
 
@@ -18,14 +18,9 @@
     <Folder Include="Config\" />
     <Folder Include="Auth\" />
     <Folder Include="Model\" />
-    <Folder Include="User\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sixpence.WeChat.Common\Sixpence.WeChat.Common.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Sixpence.ORM" Version="2.2.0" />
-    <PackageReference Include="Sixpence.Common" Version="1.3.0" />
   </ItemGroup>
   <ItemGroup>
     <None Update="miniprogram.api.json">

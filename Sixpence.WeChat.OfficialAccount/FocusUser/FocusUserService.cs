@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Sixpence.Common;
+using Sixpence.Web.Service;
 
 namespace Sixpence.WeChat.OfficialAccount.FocusUser
 {
-    public class FocusUserService : EntityService<focus_user>
+    public class FocusUserService : EntityService<FocusUser>
     {
         #region 构造函数
         public FocusUserService() : base() { }
@@ -26,7 +27,7 @@ namespace Sixpence.WeChat.OfficialAccount.FocusUser
         public void SaveData(string openid)
         {
             var focusUser = GetFocusUser(openid);
-            focus_user user = new focus_user()
+            FocusUser user = new FocusUser()
             {
                 id = focusUser.openid,
                 subscribe = focusUser.subscribe,

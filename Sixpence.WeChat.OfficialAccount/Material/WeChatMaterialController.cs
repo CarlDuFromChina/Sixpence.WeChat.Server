@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sixpence.WeChat.OfficialAccount.Material
 {
-    public class WechatMaterialController : EntityBaseController<wechat_material, WeChatMaterialService>
+    public class WechatMaterialController : EntityBaseController<WechatMaterial, WeChatMaterialService>
     {
     }
 }

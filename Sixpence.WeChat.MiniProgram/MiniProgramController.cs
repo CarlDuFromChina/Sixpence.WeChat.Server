@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sixpence.Web.Auth;
-using Sixpence.Web.Module.DataService;
+using Sixpence.Web.Model;
+using Sixpence.Web.Service;
 using Sixpence.Web.WebApi;
 
 namespace Sixpence.WeChat.MiniProgram

@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 namespace Sixpence.WeChat.OfficialAccount.FocusUser
 {
     [Entity("focus_user", "微信用户")]
-    public partial class focus_user : BaseEntity
+    public partial class FocusUser : BaseEntity
     {
         /// <summary>
         /// 实体id

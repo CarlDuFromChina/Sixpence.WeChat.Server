@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   
   <ItemGroup>
@@ -17,6 +17,9 @@
     <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Sixpence.Web" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Sixpence.Common" Version="2.0.0" />
+    <PackageReference Include="Sixpence.ORM" Version="3.1.0" />
+    <PackageReference Include="Sixpence.Web" Version="2.1.2" />
   </ItemGroup>
 </Project>

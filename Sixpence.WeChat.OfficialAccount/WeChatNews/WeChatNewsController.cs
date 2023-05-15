@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sixpence.WeChat.OfficialAccount.WeChatNews
 {
-    public class WechatNewsController : EntityBaseController<wechat_news, WeChatNewsService>
+    public class WechatNewsController : EntityBaseController<WechatNews, WeChatNewsService>
     {
         /// <summary>
         /// 添加图文素材

@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 namespace Sixpence.WeChat.OfficialAccount.WeChatNews
 {
     [Entity("wechat_news", "微信图文素材")]
-    public partial class wechat_news : BaseEntity
+    public partial class WechatNews : BaseEntity
     {
         /// <summary>
         /// 实体id

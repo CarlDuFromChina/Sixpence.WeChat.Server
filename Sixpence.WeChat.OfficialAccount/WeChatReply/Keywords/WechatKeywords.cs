@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace Sixpence.WeChat.OfficialAccount.WeChatReply.Keywords
 {
     [Entity("wechat_keywords", "微信关键词回复")]
-    public partial class wechat_keywords : BaseEntity
+    public partial class WechatKeywords : BaseEntity
     {
         /// <summary>
         /// 实体id

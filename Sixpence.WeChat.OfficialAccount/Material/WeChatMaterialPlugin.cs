@@ -9,11 +9,13 @@ Description：素材Plugin
 
 using Sixpence.Web.Config;
 using Sixpence.Web.Store;
-using Sixpence.Web.Store.SysFile;
 using Sixpence.Common.IoC;
 using Sixpence.Common.Utils;
 using Sixpence.ORM.EntityManager;
 using System;
+using Sixpence.Web.Service;
+using Sixpence.Web.Entity;
+using Sixpence.Common.Crypto;
 
 namespace Sixpence.WeChat.OfficialAccount.Material
 {
@@ -21,7 +23,7 @@ namespace Sixpence.WeChat.OfficialAccount.Material
     {
         public void Execute(EntityManagerPluginContext context)
         {
-            var entity = context.Entity as wechat_material;
+            var entity = context.Entity as WechatMaterial;
             switch (context.Action)
             {
                 case EntityAction.PreCreate:
@@ -35,7 +37,7 @@ namespace Sixpence.WeChat.OfficialAccount.Material
                         var hash_code = SHAUtil.GetFileSHA1(stream);
                         var config = StoreConfig.Config;
                         ServiceContainer.Resolve<IStoreStrategy>(config?.Type).Upload(stream, entity.name, out var filePath);
-                        var sysImage = new sys_file()
+                        var sysImage = new SysFile()
                         {
                             id = id,
                             name = entity.name,

@@ -3,8 +3,8 @@ using System.Xml.Linq;
 using Sixpence.ORM.EntityManager;
 using Sixpence.Web.Auth;
 using Sixpence.Web.Auth.Role;
-using Sixpence.Web.Auth.UserInfo;
 using Sixpence.Web.Config;
+using Sixpence.Web.Entity;
 
 namespace Sixpence.WeChat.MiniProgram.User
 {
@@ -12,7 +12,7 @@ namespace Sixpence.WeChat.MiniProgram.User
     {
         public void Execute(EntityManagerPluginContext context)
         {
-            var entity = context.Entity as mp_user;
+            var entity = context.Entity as MpUser;
             switch (context.Action)
             {
                 case EntityAction.PostCreate:
@@ -23,12 +23,12 @@ namespace Sixpence.WeChat.MiniProgram.User
             }
         }
 
-        public void CreateUserInfo(IEntityManager manager, mp_user mpUser)
+        public void CreateUserInfo(IEntityManager manager, MpUser mpUser)
         {
-            user_info user = manager.QueryFirst<user_info>(mpUser.id);
+            UserInfo user = manager.QueryFirst<UserInfo>(mpUser.id);
             if (user == null)
             {
-                user = new user_info()
+                user = new UserInfo()
                 {
                     id = mpUser.openid,
                     code = mpUser.openid,

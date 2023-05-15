@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sixpence.WeChat.OfficialAccount.FocusUser
 {
-    public class FocusUserController : EntityBaseController<focus_user, FocusUserService>
+    public class FocusUserController : EntityBaseController<FocusUser, FocusUserService>
     {
         [HttpGet("focus_user")]
         public FocusUserListModel GetFocusUserList()

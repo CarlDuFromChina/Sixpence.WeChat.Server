@@ -2,6 +2,8 @@
 using Sixpence.ORM.EntityManager;
 using Sixpence.Web.Auth;
 using Sixpence.Web.Auth.Role.BasicRole;
+using Sixpence.Web.Entity;
+using Sixpence.Web.Model;
 using Sixpence.WeChat.MiniProgram.Auth;
 using Sixpence.WeChat.MiniProgram.User;
 
@@ -25,14 +27,14 @@ namespace Sixpence.WeChat.MiniProgram
                 var data = new MpUserService(manager).GetData(openid);
                 if (data == null)
                 {
-                    data = new mp_user()
+                    data = new MpUser()
                     {
                         id = openid,
                         openid = openid,
                     };
                     manager.Create(data);
                 }
-                var auth = manager.QueryFirst<auth_user>(openid);
+                var auth = manager.QueryFirst<AuthUser>(openid);
                 return new LoginResponse()
                 {
                     result = true,

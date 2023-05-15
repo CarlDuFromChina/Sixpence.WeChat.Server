@@ -9,7 +9,7 @@ Description：同步微信素材Job
 
 using Quartz;
 using Sixpence.ORM.EntityManager;
-using Sixpence.Web.Auth.UserInfo;
+using Sixpence.Web.Entity;
 using Sixpence.Web.Job;
 using Sixpence.WeChat.OfficialAccount.Material;
 using Sixpence.WeChat.OfficialAccount.Model;
@@ -31,7 +31,7 @@ namespace Sixpence.WeChat.OfficialAccount.Job
         {
             var Manager = EntityManagerFactory.GetManager();
             Logger.Debug("开始同步微信公众号素材");
-            var user = Manager.QueryFirst<user_info>("5B4A52AF-052E-48F0-82BB-108CC834E864");
+            var user = Manager.QueryFirst<UserInfo>("5B4A52AF-052E-48F0-82BB-108CC834E864");
             try
             {
                 var images = new WeChatMaterialService(Manager).GetMaterial(MaterialType.image.ToMaterialTypeString(), 1, 5000);
@@ -44,10 +44,10 @@ namespace Sixpence.WeChat.OfficialAccount.Job
                     Logger.Debug($"发现共{images.item_count}张图片待同步");
                     images.item.ForEach(item =>
                     {
-                        var data = Manager.QueryFirst<wechat_material>(item.media_id);
+                        var data = Manager.QueryFirst<WechatMaterial>(item.media_id);
                         if (data == null)
                         {
-                            var material = new wechat_material()
+                            var material = new WechatMaterial()
                             {
                                 id = item.media_id,
                                 media_id = item.media_id,
@@ -79,10 +79,10 @@ namespace Sixpence.WeChat.OfficialAccount.Job
                     Logger.Debug($"发现共{images.item_count}个语音待同步");
                     voices.item.ForEach(item =>
                     {
-                        var data = Manager.QueryFirst<wechat_material>(item.media_id);
+                        var data = Manager.QueryFirst<WechatMaterial>(item.media_id);
                         if (data == null)
                         {
-                            var material = new wechat_material()
+                            var material = new WechatMaterial()
                             {
                                 id = item.media_id,
                                 media_id = item.media_id,
@@ -115,10 +115,10 @@ namespace Sixpence.WeChat.OfficialAccount.Job
                     Logger.Debug($"发现共{images.item_count}个视频待同步");
                     videos.item.ForEach(item =>
                     {
-                        var data = Manager.QueryFirst<wechat_material>(item.media_id);
+                        var data = Manager.QueryFirst<WechatMaterial>(item.media_id);
                         if (data == null)
                         {
-                            var material = new wechat_material()
+                            var material = new WechatMaterial()
                             {
                                 id = item.media_id,
                                 media_id = item.media_id,

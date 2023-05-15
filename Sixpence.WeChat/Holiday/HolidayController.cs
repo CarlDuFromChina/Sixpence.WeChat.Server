@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Sixpence.Web.Entity;
+using Sixpence.Web.Model;
 using Sixpence.Web.WebApi;
 using System.Collections.Generic;
 
 namespace Sixpence.WeChat.Holiday
 {
-    public class HolidayController : EntityBaseController<holiday, HolidayService>
+    public class HolidayController : EntityBaseController<Holiday, HolidayService>
     {
         [HttpGet("repeat_time/options")]
         public List<SelectOption> GetRepeatTimeOptions()

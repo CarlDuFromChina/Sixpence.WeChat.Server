@@ -7,7 +7,7 @@ namespace Sixpence.WeChat.Holiday
 {
     [Entity("holiday")]
     [KeyAttributes("纪念日名称不能重复", "created_by", "name")]
-    public class holiday : BaseEntity
+    public class Holiday : BaseEntity
     {
         [DataMember]
         [PrimaryColumn]

@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
 using Sixpence.ORM.Entity;
 using Sixpence.ORM.EntityManager;
+using Sixpence.Web.Service;
 using Sixpence.WeChat.OfficialAccount.Model;
 using Sixpence.WeChat.OfficialAccount.WeChatNewsMaterial;
 using System.Collections.Generic;
 
 namespace Sixpence.WeChat.OfficialAccount.WeChatNews
 {
-    public class WeChatNewsService : EntityService<wechat_news>
+    public class WeChatNewsService : EntityService<WechatNews>
     {
         #region 构造函数
         public WeChatNewsService() : base() { }
@@ -23,7 +24,7 @@ namespace Sixpence.WeChat.OfficialAccount.WeChatNews
         {
             foreach (var item in ids)
             {
-                var data = Manager.QueryFirst<wechat_news>(item);
+                var data = Manager.QueryFirst<WechatNews>(item);
                 OfficialAccountApi.DeleteMaterial(data.media_id);
             }
             base.DeleteData(ids);
@@ -33,7 +34,7 @@ namespace Sixpence.WeChat.OfficialAccount.WeChatNews
         /// 修改图文素材
         /// </summary>
         /// <param name="t"></param>
-        public override void UpdateData(wechat_news t)
+        public override void UpdateData(WechatNews t)
         {
             var model = new
             {
@@ -100,7 +101,7 @@ namespace Sixpence.WeChat.OfficialAccount.WeChatNews
                 }
             };
             var result = OfficialAccountApi.AddNews(JsonConvert.SerializeObject(postData));
-            var data = new wechat_news()
+            var data = new WechatNews()
             {
                 id = result.media_id,
                 media_id = result.media_id,

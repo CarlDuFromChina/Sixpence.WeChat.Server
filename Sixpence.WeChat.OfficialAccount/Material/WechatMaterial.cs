@@ -1,4 +1,3 @@
-
 using Sixpence.ORM.Entity;
 using System;
 using System.ComponentModel;
@@ -7,7 +6,7 @@ using System.Runtime.Serialization;
 namespace Sixpence.WeChat.OfficialAccount.Material
 {
     [Entity("wechat_material", "微信素材")]
-    public partial class wechat_material : BaseEntity
+    public partial class WechatMaterial : BaseEntity
     {
         /// <summary>
         /// 实体id

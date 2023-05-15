@@ -8,7 +8,7 @@ using System.Text;
 namespace Sixpence.WeChat.OfficialAccount.WeChatNewsMaterial
 {
     [Entity("wechat_news_material", "微信图文消息素材")]
-    public class wechat_news_material : BaseEntity
+    public class WechatNewsMaterial : BaseEntity
     {
         /// <summary>
         /// 实体id

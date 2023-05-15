@@ -40,7 +40,7 @@ namespace Sixpence.WeChat.OfficialAccount.Job
                     var user = UserIdentityUtil.GetCurrentUser() ?? UserIdentityUtil.GetSystem();
                     var dataList = (from item in result.item
                                     let news = item.content.news_item.FirstOrDefault()
-                                    select new wechat_news()
+                                    select new WechatNews()
                                     {
                                         id = item.media_id,
                                         html_content = new WeChatNewsMaterialService(Manager).ConvertWeChatUrlToLocalUrl(news?.content),

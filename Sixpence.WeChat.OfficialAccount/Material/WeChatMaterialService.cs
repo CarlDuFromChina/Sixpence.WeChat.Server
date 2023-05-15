@@ -5,8 +5,9 @@ using Sixpence.Common.Utils;
 using Sixpence.ORM.Entity;
 using Sixpence.ORM.EntityManager;
 using Sixpence.Web.Config;
+using Sixpence.Web.Model;
+using Sixpence.Web.Service;
 using Sixpence.Web.Store;
-using Sixpence.Web.Store.SysFile;
 using Sixpence.WeChat.Common.Model;
 using Sixpence.WeChat.OfficialAccount.Model;
 using System;
@@ -14,7 +15,7 @@ using System.Collections.Generic;
 
 namespace Sixpence.WeChat.OfficialAccount.Material
 {
-    public class WeChatMaterialService : EntityService<wechat_material>
+    public class WeChatMaterialService : EntityService<WechatMaterial>
     {
         #region 构造函数
         public WeChatMaterialService() : base() { }
@@ -71,7 +72,7 @@ namespace Sixpence.WeChat.OfficialAccount.Material
             AssertUtil.IsNull(file, $"根据fileid：{fileId}未找到记录");
 
             // 检查素材库是否已经上传
-            var data = Manager.QueryFirst<wechat_material>("select * from wechat_material where sys_fileid = @sys_fileid", new Dictionary<string, object>() { { "@sys_fileid", file.id } });
+            var data = Manager.QueryFirst<WechatMaterial>("select * from wechat_material where sys_fileid = @sys_fileid", new Dictionary<string, object>() { { "@sys_fileid", file.id } });
             if (data != null)
             {
                 return new WeChatSuccessUploadResponse()
@@ -88,7 +89,7 @@ namespace Sixpence.WeChat.OfficialAccount.Material
             stream.Dispose();
 
             // 创建素材记录
-            var material = new wechat_material()
+            var material = new WechatMaterial()
             {
                 id = Guid.NewGuid().ToString(),
                 media_id = media.media_id,

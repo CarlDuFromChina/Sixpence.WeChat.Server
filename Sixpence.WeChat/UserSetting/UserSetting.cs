@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace Sixpence.WeChat.UserSetting
 {
     [Entity]
-    public class user_setting : BaseEntity
+    public class UserSetting : BaseEntity
     {
         [DataMember]
         [PrimaryColumn]

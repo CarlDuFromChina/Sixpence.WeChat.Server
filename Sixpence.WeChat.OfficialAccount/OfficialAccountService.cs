@@ -7,6 +7,7 @@ using Sixpence.WeChat.OfficialAccount.WeChatReply.Focus;
 using Sixpence.WeChat.OfficialAccount.WeChatReply.Keywords;
 using System.Xml;
 using Sixpence.Common.Logging;
+using Sixpence.Common.Crypto;
 
 namespace Sixpence.WeChat.OfficialAccount
 {

@@ -17,10 +17,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sixpence.ORM.EntityManager;
+using Sixpence.Web.Service;
 
 namespace Sixpence.WeChat.OfficialAccount.WeChatReply.Keywords
 {
-    public class WeChatKeywordsService : EntityService<wechat_keywords>
+    public class WeChatKeywordsService : EntityService<WechatKeywords>
     {
         #region 构造函数
         public WeChatKeywordsService() : base() { }
@@ -33,13 +34,13 @@ namespace Sixpence.WeChat.OfficialAccount.WeChatReply.Keywords
         /// </summary>
         /// <param name="requestMesage"></param>
         /// <returns></returns>
-        public IEnumerable<wechat_keywords> GetDataList(string requestMesage)
+        public IEnumerable<WechatKeywords> GetDataList(string requestMesage)
         {
             var sql = @"
 SELECT * FROM wechat_keywords
 WHERE name LIKE CONCAT('%', @name, '%')
 ";
-            return Manager.Query<wechat_keywords>(sql, new Dictionary<string, object>() { { "@name", requestMesage } });
+            return Manager.Query<WechatKeywords>(sql, new Dictionary<string, object>() { { "@name", requestMesage } });
         }
 
         /// <summary>

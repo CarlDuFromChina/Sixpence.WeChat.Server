@@ -7,7 +7,7 @@ using Sixpence.ORM.Entity;
 namespace Sixpence.WeChat.MiniProgram.User
 {
     [Entity("mp_user", "微信小程序用户")]
-    public class mp_user : BaseEntity
+    public class MpUser : BaseEntity
     {
         [PrimaryColumn, DataMember]
         public string id { get; set; }

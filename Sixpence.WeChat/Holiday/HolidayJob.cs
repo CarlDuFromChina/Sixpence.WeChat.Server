@@ -1,13 +1,9 @@
-﻿using NUnit.Framework;
-using Quartz;
+﻿using Quartz;
 using Sixpence.Common;
 using Sixpence.ORM.EntityManager;
 using Sixpence.Web.Auth;
-using Sixpence.Web.Auth.UserInfo;
 using Sixpence.Web.Job;
 using Sixpence.WeChat.OfficialAccount.FocusUser;
-using System;
-using System.Collections;
 using System.Linq;
 
 namespace Sixpence.WeChat.Holiday
@@ -23,8 +19,8 @@ namespace Sixpence.WeChat.Holiday
         public override void Executing(IJobExecutionContext context)
         {
             var manager = EntityManagerFactory.GetManager();
-            var users = manager.Query<focus_user>("select * from focus_user");
-            var holidays = manager.Query<holiday>("select * from holiday");
+            var users = manager.Query<FocusUser>("select * from focus_user");
+            var holidays = manager.Query<Holiday>("select * from holiday");
             var innerUsers = new string[]
             {
                 UserIdentityUtil.ADMIN_ID,

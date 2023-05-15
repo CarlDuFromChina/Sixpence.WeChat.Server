@@ -6,8 +6,8 @@ using System;
 using System.Collections.Generic;
 using Sixpence.Common.Logging;
 using Sixpence.ORM.EntityManager;
-using Sixpence.Web.Module.SysConfig;
 using Sixpence.WeChat.OfficialAccount.FocusUser;
+using Sixpence.Web.Service;
 
 namespace Sixpence.WeChat.OfficialAccount.WeChatReply.Focus
 {

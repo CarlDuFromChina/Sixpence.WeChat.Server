@@ -1,12 +1,14 @@
 ﻿using Sixpence.ORM.Entity;
 using Sixpence.ORM.EntityManager;
 using Sixpence.Web.Entity;
+using Sixpence.Web.Model;
+using Sixpence.Web.Service;
 using System;
 using System.Collections.Generic;
 
 namespace Sixpence.WeChat.Holiday
 {
-    public class HolidayService : EntityService<holiday>
+    public class HolidayService : EntityService<Holiday>
     {
         #region 构造函数
         public HolidayService() : base() { }
